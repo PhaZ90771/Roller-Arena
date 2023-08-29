@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             var enemyRb = collision.gameObject.GetComponent<Rigidbody>();
             var direction = (collision.gameObject.transform.position - transform.position);
 
-            Debug.LogFormat("Collided with {0} with powerup set to {1}", collision.gameObject.name, hasPowerup);
+            //Debug.LogFormat("Collided with {0} with powerup set to {1}", collision.gameObject.name, hasPowerup);
             enemyRb.AddForce(direction * powerupStrength, ForceMode.Impulse);
         }
     }
