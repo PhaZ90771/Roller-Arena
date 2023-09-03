@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class PlayerController : MonoBehaviour
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+
+        if (transform.position.y < -2)
+        {
+            StartCoroutine(Gameover());
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,5 +61,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(powerupLength);
         hasPowerup = false;
         powerupIndicator.gameObject.SetActive(false);
+    }
+
+    private IEnumerator Gameover()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(2);
     }
 }
