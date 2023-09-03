@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnPowerup()
     {
-        Instantiate(powerupPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
     }
 
     private void SpawnWave()
