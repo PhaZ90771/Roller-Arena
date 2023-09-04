@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public PowerupIndicator powerupIndicator;
+    public PowerupIndicator PowerupIndicator;
     
     private Rigidbody playerRb;
     private GameObject focalPoint;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
-        powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+        PowerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
 
         if (powerupType == Powerup.PowerupTypes.RocketAttack)
         {
@@ -53,11 +53,11 @@ public class PlayerController : MonoBehaviour
             {
                 case Powerup.PowerupTypes.PowerPush:
                     powerupType = Powerup.PowerupTypes.PowerPush;
-                    powerupIndicator.PowerupType = Powerup.PowerupTypes.PowerPush;
+                    PowerupIndicator.PowerupType = Powerup.PowerupTypes.PowerPush;
                     break;
                 case Powerup.PowerupTypes.RocketAttack:
                     powerupType = Powerup.PowerupTypes.RocketAttack;
-                    powerupIndicator.PowerupType = Powerup.PowerupTypes.RocketAttack;
+                    PowerupIndicator.PowerupType = Powerup.PowerupTypes.RocketAttack;
                     break;
                 default:
                     break;
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(powerupLength);
         powerupType = Powerup.PowerupTypes.None;
-        powerupIndicator.PowerupType = Powerup.PowerupTypes.None;
+        PowerupIndicator.PowerupType = Powerup.PowerupTypes.None;
     }
 
     private IEnumerator RocketAttackRoutine()
