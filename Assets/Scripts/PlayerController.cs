@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public PowerupIndicator PowerupIndicator;
+    public GameObject RocketPrefab;
     
     private Rigidbody playerRb;
     private GameObject focalPoint;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float powerPushStrength = 15.0f;
 
     // Powerup: Rocket Attack
-    private float rocketAttackDelay = 0.5f;
+    private float rocketAttackDelay = 1f;
 
     private void Awake()
     {
@@ -32,11 +33,6 @@ public class PlayerController : MonoBehaviour
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
         PowerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
-
-        if (powerupType == Powerup.PowerupTypes.RocketAttack)
-        {
-            StartCoroutine(RocketAttackRoutine());
-        }
 
         if (transform.position.y < -2)
         {
@@ -58,6 +54,7 @@ public class PlayerController : MonoBehaviour
                 case Powerup.PowerupTypes.RocketAttack:
                     powerupType = Powerup.PowerupTypes.RocketAttack;
                     PowerupIndicator.PowerupType = Powerup.PowerupTypes.RocketAttack;
+                    StartCoroutine(RocketAttackRoutine());
                     break;
                 default:
                     break;
@@ -88,11 +85,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator RocketAttackRoutine()
     {
-        if (powerupType == Powerup.PowerupTypes.RocketAttack)
+        while (powerupType == Powerup.PowerupTypes.RocketAttack)
         {
-            // Shoot
+            var launchPosition = transform.position + focalPoint.transform.forward;
+            Instantiate(RocketPrefab, launchPosition, RocketPrefab.transform.rotation);
             yield return new WaitForSeconds(rocketAttackDelay);
-            StartCoroutine(RocketAttackRoutine());
         }
     }
 
