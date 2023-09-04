@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb387101da4312e499d769d67a67b9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  Speed: 15
   PowerupIndicator: {fileID: 0}
   RocketPrefab: {fileID: 2842427791558688021, guid: df6db1a68c6bc4d4d8580a70cf1df711, type: 3}

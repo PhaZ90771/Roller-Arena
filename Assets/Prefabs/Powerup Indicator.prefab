@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2293723643671153433
 Transform:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ Transform:
   - {fileID: 2293723643671153433}
   - {fileID: 3577476613627234842}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8293753399678812108
 MonoBehaviour:
@@ -214,3 +214,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PowerPushIndicator: {fileID: 4257787721810416303}
   RocketAttackIndicator: {fileID: 873666335604876809}
+  PowerupType: 0

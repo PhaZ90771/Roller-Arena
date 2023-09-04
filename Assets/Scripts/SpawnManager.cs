@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-    public GameObject[] powerupPrefabs;
+    public GameObject[] EnemyPrefabs;
+    public GameObject[] PowerupPrefabs;
 
     private float spawnRange = 9;
-    private int enemyCount;
     private int waveNumber = 0;
 
     private void Update()
     {
-        enemyCount = FindObjectsOfType<Enemy>().Length;
-        if (enemyCount == 0)
+        if (!Enemy.EnemyList.Any())
         {
             waveNumber++;
             SpawnWave();
@@ -32,15 +31,15 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            var index = Random.Range(0, enemyPrefabs.Length);
-            Instantiate(enemyPrefabs[index], GenerateSpawnPosition(), enemyPrefabs[index].transform.rotation);
+            var index = Random.Range(0, EnemyPrefabs.Length);
+            Instantiate(EnemyPrefabs[index], GenerateSpawnPosition(), EnemyPrefabs[index].transform.rotation);
         }
     }
 
     private void SpawnPowerup()
     {
-        var index = Random.Range(0, powerupPrefabs.Length);
-        Instantiate(powerupPrefabs[index], GenerateSpawnPosition(), powerupPrefabs[index].transform.rotation);
+        var index = Random.Range(0, PowerupPrefabs.Length);
+        Instantiate(PowerupPrefabs[index], GenerateSpawnPosition(), PowerupPrefabs[index].transform.rotation);
     }
 
     private void SpawnWave()

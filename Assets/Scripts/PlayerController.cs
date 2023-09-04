@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float Speed;
     public PowerupIndicator PowerupIndicator;
     public GameObject RocketPrefab;
     
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float forwardInput = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        playerRb.AddForce(focalPoint.transform.forward * Speed * forwardInput);
         PowerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
 
         if (transform.position.y < -2)
@@ -87,7 +87,9 @@ public class PlayerController : MonoBehaviour
     {
         while (powerupType == Powerup.PowerupTypes.RocketAttack)
         {
-            var launchPosition = transform.position + focalPoint.transform.forward;
+            var closestEnemy = Enemy.ClosestEnemy(transform.position);
+            var direction = (closestEnemy.transform.position - transform.position).normalized;
+            var launchPosition = transform.position + direction;
             Instantiate(RocketPrefab, launchPosition, RocketPrefab.transform.rotation);
             yield return new WaitForSeconds(rocketAttackDelay);
         }

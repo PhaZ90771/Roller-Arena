@@ -347,10 +347,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4257787721810416303, guid: d54ca1808eb71ef4f994178c1bac855f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5964283539941596277, guid: d54ca1808eb71ef4f994178c1bac855f, type: 3}
       propertyPath: m_Name
       value: Powerup Indicator
