@@ -10,6 +10,7 @@ public class Powerup : MonoBehaviour
     {
         None,
         PowerPush,
-        RocketAttack
+        RocketAttack,
+        SmashAttack,
     }
 }

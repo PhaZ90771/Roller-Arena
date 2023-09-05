@@ -472,6 +472,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60105ccb48c995f43916ecdd39b20cf8, type: 3}
+--- !u!1001 &2367306322877373000
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 447372160815753383, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 447372160815753383, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447372160815753383, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447372160815753383, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950174671692272367, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+      propertyPath: m_Name
+      value: SmashArea
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+--- !u!1 &2367306322877373001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1950174671692272367, guid: 66aa47bcd0223f140abd5a978bca3ba4, type: 3}
+  m_PrefabInstance: {fileID: 2367306322877373000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4103576747543671473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8516316865559610204, guid: fffc25f08f9dbe541992f6174bcf6e73, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8516316865559610204, guid: fffc25f08f9dbe541992f6174bcf6e73, type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,11 +641,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4451753436414038588, guid: b270f6badd9dcce458ef3e50d069cfd3, type: 3}
-      propertyPath: PowerupIndicator
+      propertyPath: SmashArea
       value: 
-      objectReference: {fileID: 842577306449579684}
+      objectReference: {fileID: 2367306322877373001}
     - target: {fileID: 4451753436414038588, guid: b270f6badd9dcce458ef3e50d069cfd3, type: 3}
-      propertyPath: powerupIndicator
+      propertyPath: PowerupIndicator
       value: 
       objectReference: {fileID: 842577306449579684}
     - target: {fileID: 9186728776881897076, guid: b270f6badd9dcce458ef3e50d069cfd3, type: 3}

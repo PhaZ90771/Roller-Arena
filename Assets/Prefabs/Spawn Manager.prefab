@@ -50,3 +50,4 @@ MonoBehaviour:
   PowerupPrefabs:
   - {fileID: 8056685759324124420, guid: 0173290fa9cfb3345b2641f389294074, type: 3}
   - {fileID: 8037353312990324359, guid: 8cab3b3b16aec7e4b9f8e3eb6560e3ac, type: 3}
+  - {fileID: 8730190758398719894, guid: 17cf31260dd09c14299510aea661301f, type: 3}
