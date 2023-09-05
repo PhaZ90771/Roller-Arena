@@ -15,7 +15,6 @@ public class SmashArea : MonoBehaviour
             var inverseMagnitude = diff.magnitude;
             var enemyRb = other.gameObject.GetComponent<Rigidbody>();
             enemyRb.AddForce(direction * SmashAttackStrength / inverseMagnitude, ForceMode.Impulse);
-            Debug.Log(diff.magnitude + "=>" + SmashAttackStrength / inverseMagnitude);
         }
     }
 }
