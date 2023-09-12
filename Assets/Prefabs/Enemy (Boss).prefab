@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 15
+  IsBoss: 1

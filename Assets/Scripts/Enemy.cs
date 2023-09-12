@@ -7,16 +7,30 @@ public class Enemy : MonoBehaviour
 {
     public static List<Enemy> EnemyList = new List<Enemy>();
 
-    public float Speed;
+    public float Speed = 1f;
+    public bool IsBoss = false;
+
+    private float bossSkillCooldown = 10f;
+    private uint bossSkillNumToSpawn = 2;
 
     private Rigidbody enemyRb;
     private GameObject player;
+
+    private SpawnManager spawnManager;
 
     private void Awake()
     {
         enemyRb = GetComponent<Rigidbody>();
         player = FindObjectOfType<PlayerController>().gameObject;
+
+        spawnManager = FindObjectOfType<SpawnManager>();
+
         EnemyList.Add(this);
+
+        if (IsBoss)
+        {
+            StartCoroutine(SpawnMobs());
+        }
     }
 
     private void Update()
@@ -42,5 +56,12 @@ public class Enemy : MonoBehaviour
         return EnemyList
             .OrderBy(e => Vector3.Distance(e.transform.position, position))
             .First();
+    }
+
+    private IEnumerator SpawnMobs()
+    {
+        spawnManager.SpawnEnemyWave((int)bossSkillNumToSpawn);
+        yield return new WaitForSeconds(bossSkillCooldown);
+        StartCoroutine(SpawnMobs());
     }
 }
