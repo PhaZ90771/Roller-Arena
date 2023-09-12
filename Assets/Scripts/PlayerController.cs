@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
                 case Powerup.PowerupTypes.SmashAttack:
                     return "Smash Attack\n(Press SPACE to pound ground)";
                 default:
-                    return "No Power Up\n(Collect power up)";
+                    return "No Power Up\n(Collect power up for ability)";
             }
         }
     }
