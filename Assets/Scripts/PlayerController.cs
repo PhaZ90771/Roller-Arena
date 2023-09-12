@@ -10,6 +10,24 @@ public class PlayerController : MonoBehaviour
     public PowerupIndicator PowerupIndicator;
     public GameObject RocketPrefab;
     public GameObject SmashArea;
+
+    public string PowerUpType
+    {
+        get
+        {
+            switch (powerupType)
+            {
+                case Powerup.PowerupTypes.PowerPush:
+                    return "Power Push\n(Pushing enemy is more powerful)";
+                case Powerup.PowerupTypes.RocketAttack:
+                    return "Rocket Attack\n(Autofiring homing rockets)";
+                case Powerup.PowerupTypes.SmashAttack:
+                    return "Smash Attack\n(Press SPACE to pound ground)";
+                default:
+                    return "No Power Up\n(Collect power up)";
+            }
+        }
+    }
     
     private Rigidbody playerRb;
     private GameObject focalPoint;
