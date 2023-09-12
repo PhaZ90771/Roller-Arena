@@ -11,7 +11,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] PowerupPrefabs;
 
     private float spawnRange = 9;
-    private int waveNumber = 0;
+    private uint waveNumber = 0;
+
+    public bool IsBossWave => BossWaveEveryNthWave > 0 && waveNumber % BossWaveEveryNthWave == 0;
+    public uint WaveNumber => (uint)waveNumber;
 
     private void Update()
     {
@@ -29,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         return new Vector3(spawnX, 0, spawnZ);
     }
 
-    public void SpawnEnemyWave(int numEnemiesToSpawn)
+    public void SpawnEnemyWave(uint numEnemiesToSpawn)
     {
         for (int i = 0; i < numEnemiesToSpawn; i++)
         {
@@ -51,7 +54,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnWave()
     {
-        if (BossWaveEveryNthWave > 0 && waveNumber % BossWaveEveryNthWave == 0)
+        if (IsBossWave)
         {
             SpawnBossEnemyWave();
         }

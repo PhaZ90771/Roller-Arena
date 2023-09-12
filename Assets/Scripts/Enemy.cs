@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator SpawnMobs()
     {
-        spawnManager.SpawnEnemyWave((int)bossSkillNumToSpawn);
+        spawnManager.SpawnEnemyWave(bossSkillNumToSpawn);
         yield return new WaitForSeconds(bossSkillCooldown);
         StartCoroutine(SpawnMobs());
     }
